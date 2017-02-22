@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomProgreesBar">
+        <attr name="colorProgress" format="integer" />
+        <attr name="percentProgress" format="integer" />
+    </declare-styleable>
+</resources>
