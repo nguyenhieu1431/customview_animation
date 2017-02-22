@@ -170,11 +170,12 @@ public class CustomProgreesBar extends View {
         // opacity
         //p.setAlpha(0x80); //
 
-        //width=200
+        //25%=90, 1%=3.6;
+        //width rect =200
         RectF rectF = new RectF(centerOfCanvas.x - 100, centerOfCanvas.y - 100, centerOfCanvas.x + 100, centerOfCanvas.y + 100);
         canvas.drawCircle(getWidth() / 2, getHeight() / 2, 100f, p);
         p.setColor(Color.BLACK);
-        canvas.drawArc(rectF, 270, 90, false, p);
+        canvas.drawArc(rectF, 270, (float) (percent * 3.6), false, p);
 
     }
 
@@ -189,7 +190,7 @@ public class CustomProgreesBar extends View {
         stop();
 
         mTimerAnimator = new ValueAnimator();
-        mTimerAnimator.setObjectValues(0, 50);
+        mTimerAnimator.setObjectValues(0, percent);
         mTimerAnimator.setDuration(2000);
         mTimerAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -235,5 +236,6 @@ public class CustomProgreesBar extends View {
 
     public void setPercent(int percent) {
         this.percent = percent;
+        start();
     }
 }

@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         CustomProgreesBar bar= (CustomProgreesBar) findViewById(R.id.custom_bar);
-        bar.start();
+        //bar.start();
+        bar.setPercent(75);
     }
 }
