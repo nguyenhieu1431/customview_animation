@@ -159,6 +159,23 @@ public class CustomProgreesBar extends View {
         float width = barPaint.measureText(percentStr);
         barPaint.setColor(Color.BLACK);
         canvas.drawText(percentStr, progressWidth - width - 12, progressRect.centerY() + 6, barPaint);
+
+
+        Paint p = new Paint();
+        // smooths
+        p.setAntiAlias(true);
+        p.setColor(Color.WHITE);
+        p.setStyle(Paint.Style.STROKE);
+        p.setStrokeWidth(5);
+        // opacity
+        //p.setAlpha(0x80); //
+
+        //width=200
+        RectF rectF = new RectF(centerOfCanvas.x - 100, centerOfCanvas.y - 100, centerOfCanvas.x + 100, centerOfCanvas.y + 100);
+        canvas.drawCircle(getWidth() / 2, getHeight() / 2, 100f, p);
+        p.setColor(Color.BLACK);
+        canvas.drawArc(rectF, 270, 90, false, p);
+
     }
 
     private void initAttrs(Context c, AttributeSet attributeSet) {
